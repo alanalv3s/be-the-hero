@@ -4,7 +4,9 @@ import Header from './Header';
 
 function App() {
   return (
-    <Header title="Semana Omnistack"/>
+    <Header>
+      Be The Hero
+    </Header>
   );
 }
 
