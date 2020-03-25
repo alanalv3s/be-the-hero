@@ -8,7 +8,7 @@ import logoImg from '../../assets/logo.svg';
 
 export default function Logon() {
     return (
-        <main className="div logon-container">
+        <main className="logon-container">
                 <section className="form">
                 <img src={logoImg} alt="Logo - Be The Hero"/>
 
@@ -16,7 +16,7 @@ export default function Logon() {
                     <h1>Faça seu logon</h1>
 
                     <input placeholder="Sua ID"/>
-                    <button type="submit">Entrar</button>
+                    <button className="button" type="submit">Entrar</button>
 
                     <a href="/register">
                         <FiLogIn size={16} color="#E02041" />
