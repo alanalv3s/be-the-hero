@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Header from './Header';
 
 function App() {
-let counter = 0;
+let counter = useState ();
+
+//  Array [valor, funcaoAtualização]
 
 function increment (){
-  counter ++;
+  counter++;
+  console.log(counter);
 }
 
-console.log(counter)
-
   return (
-    <div>s
-    <Header>Contador: {counter} </Header>
+    <div>
+    <Header>Contador: {counter}</Header>
       <button onClick={increment}>Incrementar</button>
       </div>
   );
