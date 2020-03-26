@@ -24,7 +24,7 @@ export default function Incidents() {
             return;
         }
 
-        if total > 0 && incidents.lenght === total) {
+        if (total > 0 && incidents.lenght === total) {
             return;
         }
 
@@ -62,7 +62,7 @@ export default function Incidents() {
                 keyExtractor={incident => String(incident.id)}
                 showsVerticalScrollIndicator={false}
                 onEndReached={loadIncidents}
-                onEndReachedThreshold={0.25}
+                onEndReachedThreshold={0.3}
                 renderItem={({ item: incident }) => (
                     <View style={styles.incident}>
                         <Text style={[styles.incidentProperty]}>ONG:</Text>
