@@ -32,7 +32,7 @@ export default function Incidents() {
                 showsVerticalScrollIndicator={false}
                 renderItem={() => (
                     <View style={styles.incident}>
-                        <Text style={styles.incidentProperty}>ONG:</Text>
+                        <Text style={[styles.incidentProperty]}>ONG:</Text>
                         <Text style={styles.incidentValue}>APAD</Text>
 
                         <Text style={styles.incidentProperty}>CASO:</Text>
