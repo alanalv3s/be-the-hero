@@ -10,19 +10,21 @@ import logoImg from '../../assets/logo.png'
 export default function Incidents() {
     const navigation = useNavigation();
     const [incidents,setIncidents] = useState([]);
+    const [total, setTotal] = useState(0);
 
     function navigateToDetail() {
         navigation.navigate('Detail');
     }
 
-    async function loadIncidents();{
+    async function loadIncidents() {
         const response = await api.get('incidents');
 
         setIncidents(response.data)
+        setTotal(response.headers['x-total-count']);
     }
 
     useEffect(() => {
-        
+        loadIncidents();
     }, []);
 
     return (
@@ -30,7 +32,7 @@ export default function Incidents() {
             <View style={styles.header}>
                 <Image source={logoImg} />
                 <Text style={styles.headerText}>
-                    Total de <Text style={styles.headerTextBold}>0 casos</Text>
+                    Total de <Text style={styles.headerTextBold}>{total} casos</Text>
                 </Text>
             </View>
 
@@ -51,7 +53,11 @@ export default function Incidents() {
                         <Text style={styles.incidentValue}>{incident.title}</Text>
 
                         <Text style={styles.incidentProperty}>VALOR:</Text>
-                        <Text style={styles.incidentValue}>{incident.value}</Text>
+                        <Text style={styles.incidentValue}>
+                            {Intl.NumberFormat('pt-BR', {
+                                style: 'currency',
+                                currency: 'BRL'
+                                }).format(incident.value)}</Text>
 
                         <TouchableOpacity 
                         style={styles.detailsButton} 
